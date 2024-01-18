@@ -1,0 +1,22 @@
+:root{
+    --errorColor: red;
+    --inputBorderColor: gray;
+}
+
+form{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    width: 80%;
+}
+
+.ErrorMsg{
+    background-color: var(--errorColor);
+}
+#inputForm{
+    height: 2rem;
+    font-size: 1.5rem;
+    border-width: 5px;
+    border-radius: 5px;
+    border-color: var(--inputBorderColor);
+}
