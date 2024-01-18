@@ -59,9 +59,11 @@ function CheckPassword(inputForm){
 
     if(!InRangeLength(inputForm, MinLength, MaxLength)){
         ShowErrorMsg(LengthError, msgLengthError);
+        msgLengthError.removeAttribute("hidden");
         errorCase = true;
     }else{
         RemoveErrorMsg(msgLengthError);
+        msgLengthError.setAttribute("hidden","");
     }
     if(AmountLowercases(inputForm.value)<MinLowerCaseReq){
         ShowErrorMsg(AmountLowerCaseError, msgLowerCaseError);
@@ -110,9 +112,11 @@ function CheckPassword(inputForm){
 
 function ShowErrorMsg(message, documentObject){
     documentObject.innerHTML = message
+    documentObject.removeAttribute("hidden");
 }
 function RemoveErrorMsg(documentObject){
     documentObject.innerHTML="";
+    documentObject.setAttribute("hidden","");
 }
 
 function InRangeLength(inputForm, minLength, maxLength){

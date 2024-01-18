@@ -3,15 +3,40 @@
     --inputBorderColor: gray;
 }
 
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-image: url(BodyBackground.png);
+    background-size:cover;
+}
+
 form{
+    border-radius: 10px;
     display: flex;
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     flex-direction: column;
-    width: 80%;
+    width: 600px;
+    background-color: gray;
+    padding: 30px;
+}
+.button{
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+}
+label{
+    font-size: 1.3rem;
 }
 
 .ErrorMsg{
     background-color: var(--errorColor);
+    border-radius: 5px;
+    border-color: var(--errorColor);
+    border-style: ridge;
 }
 #inputForm{
     height: 2rem;
@@ -19,4 +44,11 @@ form{
     border-width: 5px;
     border-radius: 5px;
     border-color: var(--inputBorderColor);
+}
+
+@media (max-width:1000px){
+    form {
+        width: 70%;
+    }
+
 }

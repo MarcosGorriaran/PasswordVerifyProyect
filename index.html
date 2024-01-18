@@ -9,16 +9,18 @@
 </head>
 <body>
     <form>
+        <label>Access code: </label>
         <input type="password" name="password" id="inputForm" >
         <div id="MsgBox">
-            <p class="ErrorMsg" id="NotInRange"></p>
-            <p class="ErrorMsg" id="NoLowerCase"></p>
-            <p class="ErrorMsg" id="NoUpperCase"></p>
-            <p class="ErrorMsg" id="NoDigitsCase"></p>
-            <p class="ErrorMsg" id="RepeatedCase"></p>
-            <p class="ErrorMsg" id="SpaceCase"></p>
-            <p class="ErrorMsg" id="NoSpecialCase"></p>
+            <p class="ErrorMsg" id="NotInRange" hidden></p>
+            <p class="ErrorMsg" id="NoLowerCase" hidden></p>
+            <p class="ErrorMsg" id="NoUpperCase" hidden></p>
+            <p class="ErrorMsg" id="NoDigitsCase" hidden></p>
+            <p class="ErrorMsg" id="RepeatedCase" hidden></p>
+            <p class="ErrorMsg" id="SpaceCase" hidden></p>
+            <p class="ErrorMsg" id="NoSpecialCase" hidden></p>
         </div>
+        <input type="button" value="Access" class="button">
     </form>
     
     
