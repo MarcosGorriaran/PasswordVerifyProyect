@@ -1,10 +1,3 @@
-const asciiCodeForZero = 48;
-const asciiCodeForNine = 57;
-const asciiCodeForA = 65;
-const asciiCodeForZ = 90;
-const asciiCodeFora = 97;
-const asciiCodeForz = 122;
-const asciiCodeForSpace = 32;
 
 window.addEventListener('load',(event) => {
     init();
@@ -139,7 +132,8 @@ function InRange(compareValue, minLength, maxLength){
     return compareValue>=minLength && compareValue<=maxLength;
 }
 function AmountLowercases(inputForm){
-    
+    const asciiCodeFora = 97;
+    const asciiCodeForz = 122;
     let sum = 0;
     for(let i = 0; i<inputForm.length; i++){
         let asciiCode = inputForm.charCodeAt(i);
@@ -150,6 +144,8 @@ function AmountLowercases(inputForm){
     return sum;
 }
 function AmountUppercases(inputForm){
+    const asciiCodeForA = 65;
+    const asciiCodeForZ = 90;
     let sum = 0;
     for(let i = 0; i<inputForm.length; i++){
         let asciiCode = inputForm.charCodeAt(i);
@@ -160,6 +156,8 @@ function AmountUppercases(inputForm){
     return sum;
 }
 function AmountDigits(inputForm){
+    const asciiCodeForZero = 48;
+    const asciiCodeForNine = 57;
     let sum = 0;
     for(let i = 0; i<inputForm.length; i++){
         let asciiCode = inputForm.charCodeAt(i);
@@ -187,6 +185,7 @@ function SearchRepeatedCharacter(inputFormValue, amountRepeatTrigger){
     return false;
 }
 function AmountSpaces(inputFormValue){
+    const asciiCodeForSpace = 32;
     let sum = 0;
     for(let i = 0; i<inputFormValue.length; i++){
         let asciiCode = inputFormValue.charCodeAt(i);
@@ -197,6 +196,9 @@ function AmountSpaces(inputFormValue){
     return sum;
 }
 function AmountSpecialCharacter(inputFormValue){
+    const asciiCodeForSpace = 32;
+    const asciiCodeForA = 65;
+    const asciiCodeForZ = 90;
     let sum = 0;
     inputFormValue = inputFormValue.toUpperCase();
     for(let i = 0; i<inputFormValue.length; i++){
