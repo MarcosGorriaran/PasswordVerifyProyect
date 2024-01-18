@@ -28,6 +28,12 @@ form{
     color: white;
     font-size: 1.5rem;
 }
+
+#ShowPasswordField>input{
+    width: 15px;
+    height: 15px;
+}
+
 label{
     font-size: 1.3rem;
 }

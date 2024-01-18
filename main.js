@@ -13,10 +13,13 @@ window.addEventListener('load',(event) => {
 function init(){
     const InputID="inputForm";
     let inputForm = document.getElementById(InputID);
-    console.log(inputForm);
-    inputForm.addEventListener("blur", (event) => {
+    let showPassword = document.querySelector("#ShowPasswordField>input");
+    inputForm.addEventListener("blur", (Event) => {
         CheckPassword(inputForm);
-      });
+    });
+    showPassword.addEventListener("click", (Event) =>{
+        ShowField(inputForm);
+    });
 }
 
 function CheckPassword(inputForm){
@@ -39,13 +42,13 @@ function CheckPassword(inputForm){
     const ErrorRepeatedCharactersID = "RepeatedCase";
     const ErrorWhiteSpaceFoundID = "SpaceCase";
     const ErrorNotEnoughSpecialCharactersID = "NoSpecialCase";
-    const LengthError = "La contraseña viola la constraint de longitd de longitud minima "+MinLength+" y maxima "+MaxLength; 
-    const AmountLowerCaseError = "La contraseña viola la constraint de cantidad minima de minusculas la cual es de "+MinLowerCaseReq;
-    const AmountUpperCaseError = "La contraseña viola la constraint de cantidad minima de mayusculas la cual es de "+MinUpperCaseReq;
-    const AmountDigitsCaseError = "La contraseña viola la constraint de cantidad minima de digitos la cual es de "+MinDigitsReq;
-    const AmountRepeatedCaseError = "No pueden haver caracteres que se repita "+RepeatedCharactersReq+" veces o mas";
-    const AmountWhiteSpaceCaseError = "La contraseña viola la constraint de cantidad maxima de espacios en blanc la cual es de "+ MaxWhiteSpaceReq;
-    const AmountSpecialCharactersError = "La contraseña viola la constraint de cantidad minima de caracteres especiales la cual es de "+MinSpecialReq;
+    const LengthError = "The password violates the constraint of minimum length of "+MinLength+" and maximum of "+MaxLength; 
+    const AmountLowerCaseError = "The password violates the constraint on minimum lowercases required which are "+MinLowerCaseReq;
+    const AmountUpperCaseError = "The password violates the constraint on minimum uppercases required which is "+MinUpperCaseReq;
+    const AmountDigitsCaseError = "The password violates the constraint on minimum numbers required which is "+MinDigitsReq;
+    const AmountRepeatedCaseError = "There can not be characters that repeat "+RepeatedCharactersReq+" times or more";
+    const AmountWhiteSpaceCaseError = "The password violates the constraint of maximum amount of allowed spaces which is "+ MaxWhiteSpaceReq;
+    const AmountSpecialCharactersError = "The password violates the constraint of minimum special characters required which is "+MinSpecialReq;
     let msgLengthError = document.getElementById(LengthErrorID);
     let msgLowerCaseError = document.getElementById(ErrorNotEnoughLowerCaseID);
     let msgUpperCaseError = document.getElementById(ErrorNotEnoughUpperCaseID);
@@ -108,6 +111,15 @@ function CheckPassword(inputForm){
         cssVars.style.setProperty(InputCSSVarName, GoodColor);
     }
 
+}
+
+function ShowField(inputField){
+    let attributeValue = inputField.getAttribute("type");
+    if(attributeValue=="password"){
+        inputField.setAttribute("type", "text");
+    }else{
+        inputField.setAttribute("type", "password");
+    }
 }
 
 function ShowErrorMsg(message, documentObject){
