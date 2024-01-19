@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <form>
+        <label>Access code: </label>
+        <input type="password" name="password" id="inputForm" >
+        <div id="MsgBox">
+            <p class="ErrorMsg" id="NotInRange" hidden></p>
+            <p class="ErrorMsg" id="NoLowerCase" hidden></p>
+            <p class="ErrorMsg" id="NoUpperCase" hidden></p>
+            <p class="ErrorMsg" id="NoDigitsCase" hidden></p>
+            <p class="ErrorMsg" id="RepeatedCase" hidden></p>
+            <p class="ErrorMsg" id="SpaceCase" hidden></p>
+            <p class="ErrorMsg" id="NoSpecialCase" hidden></p>
+        </div>
+        <div id="ShowPasswordField">
+            <input type="checkbox">
+            <label>Show password</label>
+        </div>
+        
+        <input type="button" value="Access" class="button">
+    </form>
+    
+    
+</body>
+</html>

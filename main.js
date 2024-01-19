@@ -199,6 +199,8 @@ function AmountSpecialCharacter(inputFormValue){
     const asciiCodeForSpace = 32;
     const asciiCodeForA = 65;
     const asciiCodeForZ = 90;
+    const asciiCodeForZero = 48;
+    const asciiCodeForNine = 57;
     let sum = 0;
     inputFormValue = inputFormValue.toUpperCase();
     for(let i = 0; i<inputFormValue.length; i++){
